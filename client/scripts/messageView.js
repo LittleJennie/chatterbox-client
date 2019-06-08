@@ -16,9 +16,16 @@ var MessageView = {
     " -> &#034;
     ' -> &#039;
   */
-  sanitize: function(text) {
-
+  sanitize: function(text = '') {
     return text.replace(/&/g, '&amp').replace(/</g, '&lt').replace(/>/g, '&gt').replace(/"/g, '&#034').replace(/'/g, '&#039');
+  }, 
+
+  toggleFriendsClass: function(node) {
+    if (node.classList.contains('friend')) {
+      node.classList.remove('friend');
+    } else {
+      node.classList.add('friend');
+    }
   }
 
 };
