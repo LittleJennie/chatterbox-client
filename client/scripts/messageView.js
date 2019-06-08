@@ -21,7 +21,7 @@ var MessageView = {
   }, 
 
   toggleFriendsClass: function(friendName) {
-    
+    console.log('MessageView.toggleFriendsClass arguments', arguments);
   }
 
 };

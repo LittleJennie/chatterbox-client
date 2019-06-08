@@ -8,6 +8,10 @@ var Friends = {
         } else {
             this.myFriends.add(username);
         }
-    }
+    },
+
+    toggleStatus: function () {
+    	console.log('Friends.toggleStatus arguments', arguments);
+    },
 
 };
