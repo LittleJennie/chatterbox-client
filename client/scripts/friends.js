@@ -1,5 +1,6 @@
 var Friends = {
     myFriends: new Set(),
+    curFriend: '',
 
     toggleFriends: function (username) {
         if (this.myFriends.has(username)) {

@@ -18,9 +18,11 @@ var MessagesView = {
     console.dir(messageView);
 
     this.$chats.append(messageView);
+    console.log(messageView);
     $('.username').on('click', function() {
+      console.log('hi');
       Friends.toggleFriends(this.innerHTML);
-      MessageView.toggleFriendsClass(messageView);
+      MessageView.toggleFriendsClass(messageView[0]);
     });
   },
 

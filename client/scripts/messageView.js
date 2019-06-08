@@ -1,11 +1,11 @@
 var MessageView = {
 
-  render: _.template('\
-      <div class="chat">\
-        <div class="username"><%=username%></div>\
-        <div class="text"><%=text%></div>\
-      </div>\
-    '),
+  render: _.template(`
+      <div class="chat">
+        <div class="username"><%-username%></div>
+        <div class="text"><%=text%></div>
+      </div>
+    `),
 
 
 
@@ -20,12 +20,8 @@ var MessageView = {
     return text.replace(/&/g, '&amp').replace(/</g, '&lt').replace(/>/g, '&gt').replace(/"/g, '&#034').replace(/'/g, '&#039');
   }, 
 
-  toggleFriendsClass: function(node) {
-    if (node.classList.contains('friend')) {
-      node.classList.remove('friend');
-    } else {
-      node.classList.add('friend');
-    }
+  toggleFriendsClass: function(friendName) {
+    
   }
 
 };
