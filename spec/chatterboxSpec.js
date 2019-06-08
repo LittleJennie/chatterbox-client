@@ -93,7 +93,7 @@ describe('chatterbox', function() {
         roomname: 'lobby'
       });
       $('#chats').find('.username').trigger('click');
-      expect(Friends.toggleStatus.called).to.be.true;
+      expect(Friends.toggleStatus.called, 'Friends.toggleStatus.called').to.be.true;
 
       Friends.toggleStatus.restore();
     });
@@ -105,7 +105,7 @@ describe('chatterbox', function() {
 
       App.initialize();
       $('#rooms').find('button').trigger('click');
-      expect(Rooms.add.called).to.be.true;
+      expect(Rooms.add.called, 'Rooms.add.called').to.be.true;
 
       window.prompt = prompt;
       Rooms.add.restore();
@@ -117,7 +117,7 @@ describe('chatterbox', function() {
       App.initialize();
       $('#message').val('Why so many Mel Brooks quotes?');
       $('form .submit').trigger('submit');
-      expect(Parse.create.called).to.be.true;
+      expect(Parse.create.called, 'Parse.create.called').to.be.true;
 
       Parse.create.restore();
     });
