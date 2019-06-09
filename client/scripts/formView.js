@@ -12,7 +12,7 @@ var FormView = {
     event.preventDefault();
     var messageJSON = Messages.serialize($('#message').val());
     Parse.create(messageJSON);
-    FormView.$form.trigger("reset");
+    FormView.$form.trigger('reset');
   },
 
   setStatus: function(active) {

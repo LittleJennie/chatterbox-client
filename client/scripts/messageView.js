@@ -31,7 +31,7 @@ var MessageView = {
     var $chatDiv = $(`div:contains(${username})`);
 
     $chatDiv = $chatDiv.filter(function (index) {
-      return $( ".username", this ).prop('innerHTML') === username;
+      return $( '.username', this ).prop('innerHTML') === username;
     });
 
     if (Friends.myFriends.has(username)) {

@@ -22,7 +22,7 @@ var RoomsView = {
       if (!Rooms.renderedRooms.has(room) ) {
         self.renderRoom(room);
       }
-    })
+    });
   },
 
   getSelected: function() {
