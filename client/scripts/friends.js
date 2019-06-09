@@ -10,8 +10,9 @@ var Friends = {
         }
     },
 
-    toggleStatus: function () {
-    	console.log('Friends.toggleStatus arguments', arguments);
+    toggleStatus: function (username) {
+        console.log('Friends.toggleStatus arguments', arguments);
+        this.toggleFriends(username);
     },
 
 };

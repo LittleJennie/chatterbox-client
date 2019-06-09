@@ -15,27 +15,32 @@ var MessagesView = {
     message.text = MessageView.sanitize(message.text);
 
     var messageView = $(MessageView.render({username: message.username, text: message.text}));
-    console.dir(messageView);
 
-    this.$chats.append(messageView);
-    console.log(messageView);
-    $('.username').on('click', function() {
-      console.log('hi');
-      Friends.toggleFriends(this.innerHTML);
-      MessageView.toggleFriendsClass(messageView[0]);
-    });
+    this.$chats.prepend(messageView);
+    MessageView.formatCSS(message.username);
+    Messages.renderedMessages.add(message.objectId);
   },
 
   render: function() {
     console.dir(Messages.results);
-    for (var i = 0; i < Messages['results'].length; i++) {
-      var room = Messages.results[i].roomname;
+    for (var i = Messages['results'].length - 1; i >= 0; i--) {
+      var message = Messages.results[i];
+      var room = message.roomname === undefined ? 'lobby' : message.roomname;
       Rooms.roomList.add(room);
-      // if ($('rooms').get('select') === room) {
+
+      console.log('RoomsView.getSelected()', RoomsView.getSelected());
+
+      if (!Messages.renderedMessages.has(message.objectId) &&
+          room === RoomsView.getSelected()) {
         this.renderMessage(Messages.results[i]);
-      // }
+      }
     }
   },
+
+  clearMessages: function () {
+    this.$chats.empty();
+    Messages.renderedMessages = new Set();
+  }
 
 };
 

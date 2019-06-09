@@ -1,8 +1,13 @@
 var Rooms = {
   roomList: new Set(),
 
+  renderedRooms: new Set(),
+
   add: function () {
-  	console.log('Rooms.add arguments', arguments);
+    var addRoomMsg = prompt("Please enter room name: ", "New Room");
+    if (addRoomMsg !== null) {
+      Parse.create({roomname: addRoomMsg});
+    }
   }
 
 };

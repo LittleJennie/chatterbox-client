@@ -8,9 +8,11 @@ var FormView = {
 
   handleSubmit: function(event) {
     // Stop the browser from submitting the form
+    //console.log(event)
     event.preventDefault();
-    
-    console.log('click!');
+    var messageJSON = Messages.serialize($('#message').val());
+    Parse.create(messageJSON);
+    FormView.$form.trigger("reset");
   },
 
   setStatus: function(active) {
